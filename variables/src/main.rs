@@ -8,5 +8,13 @@ fn main() {
     let spaces = "   ";
     let spaces = spaces.len();
     println!("The number of spaces is {}", spaces);
+
+    // A statement does something but does not return a value
+    // An expression returns a value
+    let y = {
+        let x = 3;
+        x + 1
+    };
+    println!("The value of y is: {}", y);
     
 }
