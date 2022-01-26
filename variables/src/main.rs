@@ -16,5 +16,13 @@ fn main() {
         x + 1
     };
     println!("The value of y is: {}", y);
+
+    // Countdown before rocket launch (reverse func)
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
+    
+    
     
 }
