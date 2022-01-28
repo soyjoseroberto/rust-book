@@ -29,4 +29,11 @@ fn main() {
     s.push_str(", world!"); // push_str() appends a literal to a String
 
     println!("{}", s); // This will print `hello, world!`
+
+    // Clone() helps you avoid ownership rules
+    
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+
+    println!("s1 = {}, s2 = {}", s1, s2);
 }
