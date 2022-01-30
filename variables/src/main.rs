@@ -47,6 +47,11 @@ fn main() {
     makes_copy(x); // x would move into the function,
                    // but i32 is Copy, so it's okay to still
                    // use x afterward
+
+
+    let s3 =String::from("hello world");
+                   
+    first_word(&s3);
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
 
@@ -60,3 +65,16 @@ fn makes_copy(some_integer: i32) {
     // some_integer comes into scope
     println!("{}", some_integer);
 } // Here, some_integer goes out of scope. Nothing special happens.
+
+// String slices
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..] // Same as &s[0..len], the whole string
+}
