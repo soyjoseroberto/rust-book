@@ -38,8 +38,14 @@ fn main() {
         sign_in_count: 1,
     };
 
-    println!("{}", user1.email);
+    let user2 = build_user(
+        String::from("someone@example.com"),
+        String::from("someusername123"),
+    );
 
+    println!("{}", user1.email);
+    println!("{}", user2.email);
+    
     // Control flow with if else
     let number = 6;
 
@@ -107,4 +113,14 @@ fn first_word(s: &String) -> &str {
     }
 
     &s[..] // Same as &s[0..len], the whole string
+}
+
+// Using the field init shorthand when variables and fields have the same name
+fn build_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        active: true,
+        sign_in_count: 1,
+    }
 }
