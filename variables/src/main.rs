@@ -43,8 +43,16 @@ fn main() {
         String::from("someusername123"),
     );
 
+    // Using struct update syntax (think of spread operator in JS)
+    let user3 = User {
+        email: String::from("user3@example.com"),
+        ..user2
+    };
+
     println!("{}", user1.email);
     println!("{}", user2.email);
+    println!("{}", user3.email);
+
     
     // Control flow with if else
     let number = 6;
