@@ -5,6 +5,8 @@ struct User {
     sign_in_count: u64,
 }
 
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
 
 fn main() {
     let mut x = 5;
@@ -53,6 +55,13 @@ fn main() {
     println!("{}", user2.email);
     println!("{}", user3.email);
 
+    // Tuple structs with no named fields
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+    println!("{}", black.0); // Remember to use the . operator to access values
+    println!("{}", origin.2);
+
+
     
     // Control flow with if else
     let number = 6;
@@ -66,6 +75,8 @@ fn main() {
     } else {
         println!("number is not divisible by 4, 3, or 2");
     }
+
+
 
     // Chapter 4: Ownership
     let mut s = String::from("hello");
@@ -93,7 +104,7 @@ fn main() {
                    // use x afterward
 
 
-    let s3 =String::from("hello world");
+    let s3 = String::from("hello world");
                    
     first_word(&s3);
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
